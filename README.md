@@ -2,9 +2,9 @@ This is a immature concept of a program building a data base of the most popular
 
 This program:
 
-Scrapes Job Data from websites (as of now, just builtinnyc.com)
-Interfaces User by displaying different job's and their description and qualification to then ask what skills the user has from the listed qualifications
-Keeps userskills in memory to then generate list of all jobs ranked based on the percentage of skills the user has the job.
+              - Scrapes Job Data from websites (as of now, just builtinnyc.com)
+              - Interfaces User by displaying different job's and their description and qualification to then ask what skills the user has from the listed qualifications
+              - Keeps userskills in memory to then generate list of all jobs ranked based on the percentage of skills the user has the job.
 
 scaper.py contains the functions that gather all the job dataa
 main_code is the main program.
