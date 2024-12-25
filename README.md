@@ -1,4 +1,4 @@
-This is a immature concept of a program building a data base of the most popular tech jobs listed on the internet, gathering each Job's title, Environment, Size, Avg. Salary, Years of Experience required, and it's description & qualifications.
+This program manages a data base of the most popular tech jobs listed on the internet, gathering each Job's title, Environment, Size, Avg. Salary, Years of Experience required, and it's description & qualifications.
 
 This program:
 
