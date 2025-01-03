@@ -8,10 +8,10 @@ from bs4 import BeautifulSoup
 
 
 
+# load json file with all data :dset={"Job Title":"","Location":"","Job Environment":"","Salary":"","Description":""} # initialize a dict that will hold the job data and all its parameters
 
 
-
-with open("/Users/3017387smacbookm/Documents/Python/Python_Project_Files/JOB_VACANCY_SOURCING_PROJECT/job_data_base.json","r") as file:  
+with open("job_data_base.json","r") as file:  
     data_base=json.load(file)
 
 
@@ -24,9 +24,10 @@ description_dict=[]
 #test_description=["python","c","java"] # comapny_data["Description"] should be a list of descriptions
 
 
+
 for company_data in data_base:
     dset_new={"Company":"","Description":[],"Priority_Percentage":0}
-    dset_new["Company"]=str(company_data["Title"])
+    dset_new["Company"]=str(company_data["Job Title"])
     dset_new["Description"]=company_data["Description"]
     description_dict.append(dset_new)
     
