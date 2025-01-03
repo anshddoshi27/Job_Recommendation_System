@@ -9,7 +9,7 @@ import json
 
 
 #built-in-nyc
-def get_tech_nyc_jobs_scraper(base_url="https://motionrecruitment.com/tech-jobs?__hstc=149880873.f22ad4e11e4b7189b2a4e837e1817d57.1732757146459.1732757146459.1732757146459.1&__hssc=149880873.1.1732757146459&__hsfp=810579359"):
+def get_tech_jobs_scraper(base_url="https://motionrecruitment.com/tech-jobs?__hstc=149880873.f22ad4e11e4b7189b2a4e837e1817d57.1732757146459.1732757146459.1732757146459.1&__hssc=149880873.1.1732757146459&__hsfp=810579359"):
     #built_in_nyc=requests.get(base_url)
     #html=built_in_nyc.text
    # with open("tmotion","w") as file:
@@ -26,7 +26,7 @@ def get_tech_nyc_jobs_scraper(base_url="https://motionrecruitment.com/tech-jobs?
     
     
     
-    for page in range(0,60): # 60 pages 
+    for page in range(0,1): # 60 pages 
         
         page_url_number=0
         if page_url_number==0:
@@ -125,9 +125,37 @@ def get_tech_nyc_jobs_scraper(base_url="https://motionrecruitment.com/tech-jobs?
     return tmotion_data_frame
             
             
-            
-            
+def update_data_built_in_nyc():
+    
+    both_frames=pd.concat([pd.read_csv("tmotion_data.csv"),get_tech_jobs_scraper()],ignore_index=True)
+    both_frames.to_csv("tmotion_data.csv",index=False)
+    #drop_duplicates_for_csv_file("tmotion_data.csv")
+    print("Data Updated")             
+
+
+    
+def drop_duplicates_for_csv_file(csv_file):
+    duplicateless=pd.read_csv(csv_file).drop_duplicates(subset=["Job Title","Salary","Description"])
+    duplicateless.to_csv(csv_file,index=False)
+    
+def check_duplicates():
+    duplicates=pd.read_csv("built_in_nyc_data_base.csv").duplicated(subset=["Job Title","Salary"])
+    for value in duplicates:
+        if value==True:
+            verdict="Duplicate Found!"
+            break
+        else:
+            verdict="No Duplicates!"
+            continue
+    print(verdict)
+
             
    #print data to csv 
 
-get_tech_nyc_jobs_scraper().to_csv("tmotion_data.csv")  
+#get_tech_jobs_scraper().to_csv("tmotion_data.csv")  
+
+
+
+# update data
+
+update_data_built_in_nyc()
