@@ -1,5 +1,9 @@
 This program manages a data base of the most popular tech jobs listed on the internet, gathering each Job's title, Environment, Size, Avg. Salary, Years of Experience required, and it's description & qualifications.
 
+THE DATA IS TOO LARGE SO HERE ARE THE LINKS TO THE DATABASE LAST UPDATED IN OCTOBER (CSV AND JSON): 
+  Csv: https://drive.google.com/file/d/1z-Up9mLEg26Qrx_B85lLlfjPWmDP-TIV/view?usp=sharing
+  Json: https://drive.google.com/file/d/1G1aHo84T3VDsPBkLzxPuXrJhDw-A5pwk/view?usp=sharing
+
 This program:
 
               - Scrapes Job Data from websites (as of now, just https://motionrecruitment.com)
